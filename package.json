@@ -1,0 +1,19 @@
+{
+  "name": "redshift",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "bootstrap": "yarn install; lerna bootstrap;",
+    "start": "lerna run start --parallel",
+    "start:redshift": "node -r ./dotenv.config.js node_modules/.bin/lerna run --scope redshift --stream dev",
+    "build:redshift": "node -r ./dotenv.config.js node_modules/.bin/lerna run --scope redshift --stream build",
+    "run:build:redshift": "lerna run start --scope redshift",
+    "start:strapi": "node -r ./dotenv.config.js node_modules/.bin/lerna run --scope strapi --stream start"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+  
+}
